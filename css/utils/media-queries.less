@@ -1,0 +1,24 @@
+@xs-max: 480px;
+@sm-2cols-max: 576px;
+@sm-max: 768px;
+@md-max: 992px;
+@lg-max: 1200px;
+@lgg-max: 1280px;
+
+@sm-min: (@xs-max + 1);
+@md-min: (@sm-max + 1);
+@lg-min: (@md-max + 1);
+@xl-min: (@lg-max + 1);
+
+@extrasmall:    ~"only screen and (max-width: @{xs-max})";	
+@small-2cols:   ~"only screen and (max-width: @{sm-2cols-max})";
+@small:         ~"only screen and (max-width: @{sm-max})";
+@medium:        ~"only screen and (max-width: @{md-max})";
+@large:         ~"only screen and (max-width: @{lg-max})";
+@extralarge:    ~"only screen and (max-width: @{lgg-max})"; 
+@burger-ei:     ~"only screen and (max-width: 1024px)";
+
+
+@small-strict:   ~"only screen and (min-width: @{sm-min}) and (max-width: @{sm-max})";
+@medium-strict:  ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})";
+@large-strict:   ~"only screen and (min-width: @{lg-min}) and (max-width: @{lg-max})";

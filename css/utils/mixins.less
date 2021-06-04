@@ -1,0 +1,49 @@
+@baseFont : 16;
+.px-to-rem(@property,@sizeValues,@restLinkParams : false) {
+  @propertyRem: ~'/*rem*/'@property;
+  @propertyPx: ~'/*px*/'@property;
+  .pxtoremloop();
+  .pxtoremloop(@amount : length(@sizeValues), @i : 1) when (@i =< @amount){
+    @sizeValue: extract(@sizeValues, @i);
+    & when (iskeyword(@sizeValue)) {
+      @pxValue  : @sizeValue;
+      @remValue : @sizeValue;
+      @{propertyPx}+_ : ~"@{pxValue}";
+      @{propertyRem}+_ : ~"@{remValue}";
+    }
+    & when not (iskeyword(@sizeValue)) {
+      @pxValue  : @sizeValue;
+      @remValue : @sizeValue / @baseFont;
+      & when not (@pxValue = 0) {
+        & when (isunit(@sizeValue, '%')) {
+          @{propertyPx}+_ : ~"@{pxValue}";
+        }
+        & when not (isunit(@sizeValue, '%')) {
+          @{propertyPx}+_ : ~"@{pxValue}px";
+        }
+      }
+      & when (@pxValue = 0) {
+        @{propertyPx}+_ : @pxValue;
+      }
+      & when not (@remValue = 0) {
+        @{propertyRem}+_ : ~"@{remValue}rem";
+      }
+      & when (@remValue = 0) {
+        @{propertyRem}+_ : @remValue;
+      }
+    }
+    .pxtoremloop(@amount, (@i + 1));
+  }
+  & when not (@restLinkParams = false) {
+    @{propertyPx}+_ : @restLinkParams;
+  }
+  & when not (@restLinkParams = false) {
+    @{propertyRem}+_ : @restLinkParams;
+  }
+}
+
+
+
+.rgbaColorIn(@color, @opacity : 1){
+  @result: rgba( red(@color), green(@color), blue(@color), @opacity );
+}

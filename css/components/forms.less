@@ -1,0 +1,124 @@
+/****************************************/
+// FORM
+/****************************************/
+
+form {
+	> div {
+		.px-to-rem(padding-bottom, 20);
+		&:last-child {
+			padding-bottom: 0;
+		}
+		input {
+			border: 1px solid @Cg2;
+			width: 100%;
+			.px-to-rem(padding, 15);
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			.px-to-rem(font-size, 14);
+		}
+		select {
+			border: 1px solid @Cg2;
+			width: 100%;
+			.px-to-rem(padding, 15);
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			.px-to-rem(font-size, 14);
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			position: relative;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' height='10px' width='15px'%3E%3Ctext x='0' y='10' fill='gray'%3E%E2%96%BE%3C/text%3E%3C/svg%3E");
+		    background-repeat: no-repeat;
+		    background-size: 16px 12px;
+		    background-position: right 10px center;
+		    background-clip: border-box;
+		    -moz-background-clip: border-box;
+		    -webkit-background-clip: border-box;
+		    cursor: pointer;
+		}
+		textarea {
+			border: 1px solid @Cg2;
+			width: 100%;
+			.px-to-rem(padding, 10);
+			.px-to-rem(font-size, 14);
+		}
+		label {
+			.px-to-rem(font-size, 14);
+			.px-to-rem(margin-bottom, 10);
+		    display: block;
+		    span {
+		    	.px-to-rem(margin-top, 5);  	
+	    		display: block;
+		    }
+		}
+		.checkbox {
+			display: flex;
+    		flex-wrap: wrap;
+			> div {
+				.px-to-rem(padding-right, 20);
+				input[type="radio"] {
+					display: inline-block;
+					width: auto;
+					-webkit-appearance: none;
+				    -moz-appearance: none;
+				    -ms-appearance: none;
+				    height: 16px;
+				    width: 16px;
+				    padding: 0;
+				    border-radius: 100%;
+				    background: @Cwh;
+				    border: 1px solid @Cg4;
+				    transition: all .2s linear;
+				    display: inline-block;
+				    vertical-align: -2px;
+				    cursor: pointer;
+				    &:checked {
+				    	box-shadow: 0 0 0 3px #fff inset;
+    					outline: 0;
+					    border-color: @Cg4;
+					    background-color: @Cg4;
+				    }
+				}
+				label {
+					display: inline-block;
+					width: auto;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	button {
+		-webkit-transition: all 1s ease 0s;
+		-o-transition: all 1s ease 0s;
+		transition: all 1s ease 0s;
+		cursor: pointer;
+		background: @Cg4;
+		border: 1px solid @Cg4;
+		color: @Cwh;
+		.px-to-rem(padding, 15 20 13);
+		.px-to-rem(margin-top, 10);
+		width: 100%;
+		.px-to-rem(font-size, 16);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		&:hover {
+			background: none;
+			color: @Cg4;
+		}
+		&:focus {
+			background: none;
+			color: @Cg4;
+		}
+	}
+	p {
+		&.error {
+			.px-to-rem(font-size, 14);
+			color: @Cerr;
+			font-weight: @semibold;
+		}
+	}
+}
