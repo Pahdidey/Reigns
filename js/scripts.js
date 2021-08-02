@@ -168,7 +168,7 @@ $(document).ready(function() {
         if ((reponse.indexOf("Terminée") != -1) && (z != 0)) {
             z = 0;
             window.location.href = "index.php?page=fin-partie-recap";
-            //$window.location.replace("index.php?page=fin-partie-recap");
+            //window.location.replace("index.php?page=fin-partie-recap");
         }
     }
 
